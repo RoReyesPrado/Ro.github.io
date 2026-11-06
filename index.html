@@ -336,40 +336,64 @@
 -->
 <!-- RESEARCH GROUP GALLERY -->
 <section class="gallery-section" id="gallery">
+
   <div class="section-heading">
     <span class="section-label">BEHIND THE RESEARCH</span>
     <h2>Research Group Gallery</h2>
     <p>A glimpse into our research, collaborations, and academic activities.</p>
   </div>
 
-  <div class="gallery-container">
-    <button class="gallery-btn prev" aria-label="Previous photos">&#10094;</button>
+  <div class="gallery-wrapper">
+    <button class="gallery-arrow gallery-prev" aria-label="Previous photos">&#10094;</button>
 
-    <div class="gallery-track">
-      <article class="gallery-item">
-        <img src="assets/ricardo-01.jpg" alt="Ricardo Matute">
-        <p>Research and academic activities</p>
-      </article>
-
-      <article class="gallery-item">
-        <img src="assets/group-01.jpg" alt="Research group">
-        <p>Our research group</p>
-      </article>
-
-      <article class="gallery-item">
-        <img src="assets/group-02.jpg" alt="Group meeting">
-        <p>Scientific discussions</p>
-      </article>
-
-      <article class="gallery-item">
-        <img src="assets/conference-01.jpg" alt="Academic conference">
-        <p>Conferences and collaborations</p>
-      </article>
+    <div class="gallery-track" id="gallery-track">
+      <!-- Images are loaded automatically -->
     </div>
 
-    <button class="gallery-btn next" aria-label="Next photos">&#10095;</button>
+    <button class="gallery-arrow gallery-next" aria-label="Next photos">&#10095;</button>
   </div>
+
 </section>
+
+<script>
+fetch('assets/gallery/gallery.json')
+  .then(response => response.json())
+  .then(images => {
+    const track = document.getElementById('gallery-track');
+
+    images.forEach(image => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+
+      const img = document.createElement('img');
+      img.src = 'assets/gallery/' + image.file;
+      img.alt = image.caption || 'Research group photograph';
+      img.loading = 'lazy';
+
+      item.appendChild(img);
+
+      if (image.caption) {
+        const caption = document.createElement('p');
+        caption.textContent = image.caption;
+        item.appendChild(caption);
+      }
+
+      track.appendChild(item);
+    });
+  });
+
+document.querySelector('.gallery-next').addEventListener('click', () => {
+  document.getElementById('gallery-track').scrollBy({
+    left: 380, behavior: 'smooth'
+  });
+});
+
+document.querySelector('.gallery-prev').addEventListener('click', () => {
+  document.getElementById('gallery-track').scrollBy({
+    left: -380, behavior: 'smooth'
+  });
+});
+</script>
     <!-- =============================================================== -->
     <!-- ==================== 7. PEOPLE / PROFESSOR ==================== -->
     <!-- =============================================================== -->
