@@ -1372,10 +1372,7 @@ code {
   }
 
 }
-```css
-/* =================================
-   RESEARCH GROUP GALLERY
-================================= */
+/* RESEARCH GROUP GALLERY */
 
 .gallery-section {
   padding: 80px 0;
@@ -1409,9 +1406,9 @@ code {
 }
 
 .gallery-item img {
+  display: block;
   width: 100%;
   height: 235px;
-  display: block;
   object-fit: cover;
   border-radius: 7px;
 }
@@ -1431,7 +1428,6 @@ code {
   background: white;
   color: var(--navy);
   cursor: pointer;
-  font-size: 17px;
   transition: all 0.2s ease;
 }
 
@@ -1441,10 +1437,6 @@ code {
 }
 
 @media (max-width: 600px) {
-  .gallery-wrapper {
-    gap: 0;
-  }
-
   .gallery-arrow {
     display: none;
   }
@@ -1457,3 +1449,4 @@ code {
     height: 210px;
   }
 }
+
