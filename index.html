@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TheoChem-Lab">
   <meta name="theme-color" content="#0b1220">
-  <title>EDIT: Laboratory name</title>
+  <title>TheoChem Lab</title>
 
   <!-- EDITAR: vista previa al compartir el enlace (WhatsApp, LinkedIn, X, etc.) -->
   <meta property="og:type" content="website">
@@ -23,10 +23,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   -->
 
-  <!-- NO MODIFICAR: conecta este archivo con el diseño -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <!-- ==================== NAVEGACIÓN ====================
@@ -115,18 +113,32 @@
       </address>
     </div>
   </div>
-<!-- GALERÍA EN SERIE: 3 fotos en fila. Sube las imágenes a assets/uni/ y cambia solo src y alt. -->
+ 
+<!-- GALERÍA EN SERIE: 3 fotos en fila. Sube las imágenes a assets/uni/ y cambia solo src y alt.
+     AJUSTES POR FOTO (opcionales):
+       style="--pos: top"      → si se corta la cabeza o el techo del edificio
+       style="--pos: bottom"   → si se corta la parte baja
+       style="--pos: 30% 50%"  → enfoque personalizado (horizontal vertical)
+       class="strip-item is-contain" → para logos o imágenes que no deben recortarse -->
 <div class="container about-strip">
   <figure class="strip-item">
-    <img src="assets/uni/utfsm_1.jpg" alt="UTFSM campus, Valparaíso" width="700" height="900" loading="lazy">
+    <div class="strip-frame">
+      <img src="assets/uni/utfsm_1.jpg" alt="UTFSM campus, Valparaíso" loading="lazy">
+    </div>
     <figcaption><span>01</span> Campus</figcaption>
   </figure>
-  <figure class="strip-item">
-    <img src="assets/uni/utfsm_2.jpg" alt="Logo" width="700" height="900" loading="lazy">
+
+  <figure class="strip-item is-contain">
+    <div class="strip-frame">
+      <img src="assets/uni/utfsm_2.jpg" alt="UTFSM logo" loading="lazy">
+    </div>
     <figcaption><span>02</span> Laboratory</figcaption>
   </figure>
+
   <figure class="strip-item">
-    <img src="assets/uni/utfsm_3.jpg" alt="Federico Santa Maria" width="700" height="900" loading="lazy">
+    <div class="strip-frame">
+      <img src="assets/uni/utfsm_3.jpg" alt="Federico Santa María" loading="lazy">
+    </div>
     <figcaption><span>03</span> Research group</figcaption>
   </figure>
 </div>
