@@ -317,73 +317,89 @@
     </section>
 
     <!-- ==================== 7. PEOPLE / PROFESSOR ====================
-         AQUÍ SE EDITA EL PERFIL DEL PROFESOR DIRECTOR.
-         Foto: sube assets/professor.jpg y reemplaza el placeholder por:
-         <img class="person-photo" src="assets/professor.jpg" alt="Nombre del profesor">
-         Edita nombre, cargo, universidad, biografía, correo y perfiles académicos.
-         Para cada miembro adicional, duplica un bloque team-card.
-    -->
-    <section class="section-pad section-tint" id="people" aria-labelledby="people-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow dark"><span class="eyebrow-line" aria-hidden="true"></span> THE PEOPLE</p>
-            <h2 id="people-title">Meet the <em>team</em></h2>
-          </div>
-          <p class="section-aside">Principal investigator, researchers, students and collaborators.</p>
-        </div>
+     PROFESOR: edita la primera tarjeta.
+     GRUPOS: cada grupo (PhD, Master, Collaborators) es un bloque
+     <div class="team-group">. Para una persona nueva, copia una <article class="team-card">.
+     Fotos: súbelas a assets/ (cuadradas o 4:5, ~800 px, formato .jpg).
+-->
+<section class="section-pad section-tint" id="people" aria-labelledby="people-title">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow dark"><span class="eyebrow-line" aria-hidden="true"></span> THE PEOPLE</p>
+        <h2 id="people-title">Meet the <em>team</em></h2>
+      </div>
+      <p class="section-aside">Principal investigator, researchers, students and collaborators.</p>
+    </div>
 
-        <!-- PERFIL DEL PROFESOR: esta tarjeta es la principal -->
-        <article class="person-card">
-          <!-- REEMPLAZAR por <img class="person-photo" src="assets/professor.jpg" alt="Professor Full Name"> -->
-          <div class="person-photo-placeholder">ADD<br>PROFESSOR PHOTO</div>
-          <div class="person-info">
-            <p class="tag">PRINCIPAL INVESTIGATOR · LAB DIRECTOR</p>
-            <h3>Professor Full Name</h3><!-- EDITAR: nombre completo -->
-            <p class="person-role">Professor of [Discipline] · [Department] · [University]</p><!-- EDITAR: cargo y afiliación -->
-            <p>
-              <!-- EDITAR: biografía de 3–5 líneas: formación, trayectoria e intereses -->
-              Add a short biography of the principal investigator: academic background, research interests, current position and major contributions.
-            </p>
-            <div class="person-links">
-              <!-- EDITAR: enlaces reales; elimina los que no correspondan -->
-              <a href="mailto:professor@university.edu">EMAIL ↗</a>
-              <a href="REPLACE-ORCID-URL" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
-              <a href="REPLACE-GOOGLE-SCHOLAR-URL" target="_blank" rel="noopener noreferrer">GOOGLE SCHOLAR ↗</a>
-              <a href="REPLACE-INSTITUTIONAL-PROFILE" target="_blank" rel="noopener noreferrer">UNIVERSITY PROFILE ↗</a>
-            </div>
-          </div>
-        </article>
+    <!-- PERFIL DEL PROFESOR -->
+    <article class="person-card">
+      <img class="person-photo" src="assets/ricardo-matute.jpg" alt="Prof. Ricardo A. Matute" width="480" height="600" loading="lazy">
+      <div class="person-info">
+        <p class="tag">LAB DIRECTOR · PRINCIPAL INVESTIGATOR </p>
+        <h3>Dr. Ricardo A. Matute</h3>
+        <p class="person-role">Assistan Professor · Departamento de Quimica · UTFSM</p>
+        <img class="person-photo" src="assets/ricardo-matute.jpg" alt="Prof. Ricardo A. Matute" width="480" height="600" loading="lazy">
 
-        <!-- EQUIPO: sustituye los nombres y duplica team-card para más personas -->
-        <div class="team-grid">
+        <!-- EDITAR: estudios, del más reciente al más antiguo -->
+        <ul class="person-education">
+          <li><b>PhD</b> in Chemistry · Universidad de Chile, 2011</li>
+          <li><b>BSc</b> in Biochemistry · Universidad de Chile, 2005</li>
+        </ul>
 
-          <article class="team-card">
-            <!-- Reemplaza placeholder por <img class="team-photo" src="assets/persona1.jpg" alt="Nombre"> -->
-            <div class="team-photo-placeholder">PHOTO</div>
-            <h3>Researcher / Student Name</h3>
-            <p>PhD student · Research topic</p>
-            <a href="mailto:person@university.edu">CONTACT ↗</a>
-          </article>
+        <!-- EDITAR: biografía académica breve (2–3 líneas) -->
+        <p>
+          Leads a research program in theoretical and computational chemistry, is passionate about Marcus theory, and enjoys observing sharks (certified scuba diver).
 
-          <article class="team-card">
-            <div class="team-photo-placeholder">PHOTO</div>
-            <h3>Researcher / Student Name</h3>
-            <p>Master's student · Research topic</p>
-            <a href="mailto:person@university.edu">CONTACT ↗</a>
-          </article>
+          He obtained his B.Sc. in Biochemistry and Ph.D. in Chemistry from Universidad de Chile, conducting his doctoral research under the joint supervision of Renato Contreras (Universidad de Chile) and Leticia González (University of Vienna). He subsequently carried out postdoctoral research at UCLA with Kendall N. Houk, at USC with Nobel Laureate Arieh Warshel, and at Caltech with Nobel Laureate Rudolph A. Marcus.
 
-          <article class="team-card">
-            <div class="team-photo-placeholder">PHOTO</div>
-            <h3>Collaborator Name</h3>
-            <p>Collaborator · Institution</p>
-            <a href="mailto:person@university.edu">CONTACT ↗</a>
-          </article>
+          He is also a Visiting Scientist at the California Institute of Technology (Caltech), in the Division of Chemistry and Chemical Engineering, where he collaborates with the Marcus Research Group and the Rudolph A. Marcus Center for Theoretical Chemistry
+        </p>
 
+        <!-- EDITAR: descripción como persona (intereses, familia, deportes, música, valores) -->
+        <p class="person-personal"><b>Beyond the lab:</b> Outside of science, Ricardo enjoys [hobbies]. He believes [personal value or philosophy about mentoring/science].</p>
+
+        <div class="person-links">
+          <a href="mailto:professor@university.edu">ricardo.matute@usm.cl ↗</a>
+          <a href="REPLACE-GOOGLE-SCHOLAR-URL" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=Y4LmH44AAAAJ&hl=es&oi=ao ↗</a>
+          <a href="REPLACE-ORCID-URL" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=Y4LmH44AAAAJ&hl=es&oi=ao ↗</a>
+          <a href="REPLACE-INSTITUTIONAL-PROFILE" target="_blank" rel="noopener noreferrer">UNIVERSITY PROFILE ↗</a>
         </div>
       </div>
-    </section>
+    </article>
 
+    <!-- ============ GRUPO: PhD STUDENTS ============ -->
+    <div class="team-group">
+      <h3 class="team-group-title">PhD students</h3>
+      <div class="team-grid">
+
+        <!-- ▼▼▼ PLANTILLA DE PERSONA: COPIA Y PEGA ESTE BLOQUE ▼▼▼ -->
+        <article class="team-card">
+          <img class="team-photo" src="assets/nombre-apellido.jpg" alt="Full Name" width="400" height="400" loading="lazy">
+          <h3>Nataly Castillo</h3>
+          <p>PhD student · Theorical and Experimental Organometalic</p>
+          <p class="team-education">BSc in Chemistry, [University]</p>
+          <p class="team-personal">One or two lines about them as a person: hobbies, hometown, what they love outside the lab.</p>
+          <div class="team-links">
+            <a href="mailto:person@university.edu">EMAIL ↗</a>
+            <a href="REPLACE-GOOGLE-SCHOLAR-URL" target="_blank" rel="noopener noreferrer">GOOGLE SCHOLAR ↗</a>
+          </div>
+        </article>
+        <!-- ▲▲▲ FIN DE LA PLANTILLA ▲▲▲ -->
+
+      </div>
+    </div>
+
+    <!-- ============ GRUPO: COLLABORATORS ============ -->
+    <div class="team-group">
+      <h3 class="team-group-title">Collaborators</h3>
+      <div class="team-grid">
+        <!-- Pega aquí la plantilla de persona; cambia "PhD student · Research topic" por "Collaborator · Institution" -->
+      </div>
+    </div>
+
+  </div>
+</section>
     <!-- ==================== 8. CV ====================
          Sube el PDF a assets/professor-cv.pdf. Si tiene otro nombre,
          cambia el valor de href para que coincida exactamente.
