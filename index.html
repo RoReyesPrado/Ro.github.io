@@ -334,66 +334,66 @@
       </div>
     </section>
 -->
-<!-- RESEARCH GROUP GALLERY -->
-  <section class="gallery-section" id="gallery">
-  
+<!-- ==================== 6. GALLERY ====================
+     Sube las fotos a assets/gallery/ y agrégalas en la lista "photos" del script de abajo.
+-->
+<section class="section-pad" id="gallery" aria-labelledby="gallery-title">
+  <div class="container">
     <div class="section-heading">
-      <span class="section-label">BEHIND THE RESEARCH</span>
-      <h2>Research Group Gallery</h2>
-      <p>A glimpse into our research, collaborations, and academic activities.</p>
-    </div>
-  
-    <div class="gallery-wrapper">
-      <button class="gallery-arrow gallery-prev" aria-label="Previous photos">&#10094;</button>
-  
-      <div class="gallery-track" id="gallery-track">
-        <!-- Images are loaded automatically -->
+      <div>
+        <p class="eyebrow dark"><span class="eyebrow-line" aria-hidden="true"></span> BEHIND THE RESEARCH</p>
+        <h2 id="gallery-title">Research Group <em>Gallery</em></h2>
       </div>
-  
-      <button class="gallery-arrow gallery-next" aria-label="Next photos">&#10095;</button>
+      <p class="section-aside">A glimpse into our research, collaborations, and academic activities.</p>
     </div>
-  
-  </section>
-  
-  <script>
-  fetch('assets/gallery/gallery.json')
-    .then(response => response.json())
-    .then(images => {
-      const track = document.getElementById('gallery-track');
-  
-      images.forEach(image => {
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
-  
-        const img = document.createElement('img');
-        img.src = 'assets/gallery/' + image.file;
-        img.alt = image.caption || 'Research group photograph';
-        img.loading = 'lazy';
-  
-        item.appendChild(img);
-  
-        if (image.caption) {
-          const caption = document.createElement('p');
-          caption.textContent = image.caption;
-          item.appendChild(caption);
-        }
-  
-        track.appendChild(item);
-      });
-    });
-  
-  document.querySelector('.gallery-next').addEventListener('click', () => {
-    document.getElementById('gallery-track').scrollBy({
-      left: 380, behavior: 'smooth'
-    });
+
+    <div class="carousel">
+      <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photos">&#10094;</button>
+      <div class="carousel-track" id="carousel-track" tabindex="0" aria-label="Photo gallery"></div>
+      <button class="carousel-arrow carousel-next" type="button" aria-label="Next photos">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // EDITAR: una línea por foto. "file" = nombre en assets/gallery/. "caption" es opcional ("" si no quieres texto).
+  const photos = [
+    { file: "buzo.jpg", caption: "..." },
+    { file: "grancañon.jpg", caption: "..." },
+    { file: "hoffman.jpg", caption: "..." },
+    { file: "ken_ucla.jpg", caption: "..." },
+    { file: "marcus_center.jpg", caption: "..." },
+    { file: "marcus_group.jpg", caption: "..." },
+    { file: "ricardo_caltech.jpg", caption: "..." },
+    { file: "sylvio_canuto.jpg", caption: "..." },
+  ];
+
+  const track = document.getElementById("carousel-track");
+
+  photos.forEach(function (p) {
+    const fig = document.createElement("figure");
+    fig.className = "carousel-item";
+
+    const img = document.createElement("img");
+    img.src = "assets/gallery/" + p.file;
+    img.alt = p.caption || "Research group photograph";
+    img.loading = "lazy";
+    fig.appendChild(img);
+
+    if (p.caption) {
+      const cap = document.createElement("figcaption");
+      cap.textContent = p.caption;
+      fig.appendChild(cap);
+    }
+    track.appendChild(fig);
   });
-  
-  document.querySelector('.gallery-prev').addEventListener('click', () => {
-    document.getElementById('gallery-track').scrollBy({
-      left: -380, behavior: 'smooth'
-    });
-  });
-  </script>
+
+  function scrollGallery(direction) {
+    track.scrollBy({ left: direction * track.clientWidth * 0.8, behavior: "smooth" });
+  }
+  document.querySelector(".carousel-next").addEventListener("click", function () { scrollGallery(1); });
+  document.querySelector(".carousel-prev").addEventListener("click", function () { scrollGallery(-1); });
+</script>
     <!-- =============================================================== -->
     <!-- ==================== 7. PEOPLE / PROFESSOR ==================== -->
     <!-- =============================================================== -->
