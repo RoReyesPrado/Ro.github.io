@@ -187,26 +187,38 @@ code { background: #edf1f3; padding: 2px 5px; border-radius: 3px; }
   .contact-grid { gap: 10px; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
-.about-collage {
+.about-strip {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+  align-items: start;
 }
-.collage-item { position: relative; margin: 0; overflow: hidden; border-radius: 4px; }
-.collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-.collage-item:hover img { transform: scale(1.03); }
-.collage-main { grid-row: span 2; min-height: 420px; }
-.collage-item figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: 1.5rem 1rem .75rem; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
-  color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.65));
+.strip-item { margin: 0; }
+.strip-item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+  filter: saturate(.9);
+  transition: transform .6s ease, filter .6s ease;
 }
-address.muted { font-style: normal; line-height: 1.7; }
+.strip-item:hover img { transform: translateY(-6px); filter: saturate(1.05); }
+.strip-item:nth-child(2) { margin-top: 2.5rem; } /* la del centro baja, da movimiento */
+.strip-item figcaption {
+  margin-top: .9rem;
+  padding-top: .6rem;
+  border-top: 1px solid currentColor;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+.strip-item figcaption span { margin-right: .6rem; opacity: .6; }
 
 @media (max-width: 700px) {
-  .about-collage { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .collage-main { grid-row: auto; min-height: 260px; }
-  .collage-item { min-height: 200px; }
+  .about-strip { grid-template-columns: 1fr; gap: 1.25rem; }
+  .strip-item:nth-child(2) { margin-top: 0; }
+  .strip-item img { aspect-ratio: 16 / 10; }
 }
