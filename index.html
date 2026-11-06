@@ -384,27 +384,36 @@
 <script>
   // EDITAR: una línea por foto. "file" = nombre en assets/gallery/. "caption" es opcional ("" si no quieres texto).
   const photos = [
-    { file: "ricardo_caltech.jpg", caption: "..." },
-    { file: "hoffman.jpg", caption: "..." },
-    { file: "ken_ucla.jpg", caption: "..." },
-    { file: "marcus_center.jpg", caption: "..." },
-    { file: "marcus_group.jpg", caption: "..." },
-    { file: "sylvio_canuto.jpg", caption: "..." },
-    { file: "grancañon.jpg", caption: "..." },
-    { file: "buzo.jpg", caption: "..." }
+    { file: "ricardo_caltech.jpg", caption: "" },
+    { file: "hoffman.jpg", caption: "" },
+    { file: "ken_ucla.jpg", caption: "" },
+    { file: "marcus_center.jpg", caption: "" },
+    { file: "marcus_group.jpg", caption: "" },
+    { file: "sylvio_canuto.jpg", caption: "" },
+    { file: "grancanon.jpg", caption: "" },
+    { file: "buzo.jpg", caption: "" }
   ];
 
   const track = document.getElementById("carousel-track");
 
   photos.forEach(function (p) {
+    const src = "assets/gallery/" + encodeURI(p.file);
+
     const fig = document.createElement("figure");
     fig.className = "carousel-item";
 
+    // Marco de tamaño fijo; --bg alimenta el fondo difuminado
+    const frame = document.createElement("div");
+    frame.className = "carousel-frame";
+    frame.style.setProperty("--bg", 'url("' + src + '")');
+
     const img = document.createElement("img");
-    img.src = "assets/gallery/" + p.file;
+    img.src = src;
     img.alt = p.caption || "Research group photograph";
     img.loading = "lazy";
-    fig.appendChild(img);
+
+    frame.appendChild(img);
+    fig.appendChild(frame);
 
     if (p.caption) {
       const cap = document.createElement("figcaption");
@@ -419,8 +428,7 @@
   }
   document.querySelector(".carousel-next").addEventListener("click", function () { scrollGallery(1); });
   document.querySelector(".carousel-prev").addEventListener("click", function () { scrollGallery(-1); });
-</script>
-   
+</script>   
     <!-- =============================================================== -->
     <!-- ==================== 7. PEOPLE / PROFESSOR ==================== -->
     <!-- =============================================================== -->
