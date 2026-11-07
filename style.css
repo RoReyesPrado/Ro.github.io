@@ -1394,3 +1394,9 @@ code {
   }
 
 }
+.section-pad { padding: 76px 0; }
+.section-heading { margin-bottom: 34px; }
+.research-card { min-height: 310px; }
+.project-row { padding: 22px 5px; }
+.publication { padding: 22px 0; }
+.contact-section { padding: 72px 0; }
