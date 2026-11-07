@@ -473,99 +473,33 @@ address.muted {
 
 /* 8. SCIENTIFIC ARTWORKS
    ========================================================= */
-
-.science-art {
-  height: 110px;
-  margin-top: 15px;
-  position: relative;
-  overflow: hidden;
-  background: #edf3f4;
-}
-
-.science-art span {
-  position: absolute;
+.science-art svg {
   display: block;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
-.art-oxide {
-  background: radial-gradient(circle at 50% 50%, #d6e7e3, #eef2f4 70%);
+.science-art .ax     { fill: none; stroke: #9eb3bf; stroke-width: 1; }
+.science-art .curve  { fill: none; stroke: #4d8e88; stroke-width: 2.5; stroke-linecap: round; }
+.science-art .curve-o{ stroke: #d59b70; }
+.science-art .dash   { fill: none; stroke-width: 1.2; stroke-dasharray: 3 3; }
+.science-art .gray   { stroke: #9eb3bf; }
+.science-art .orange { stroke: #d68e64; }
+.science-art .ring   { fill: none; stroke: #d68e64; stroke-width: 1.2; stroke-dasharray: 2 2; }
+.science-art .dot-t  { fill: #4d8e88; }
+.science-art .dot-o  { fill: #d68e64; }
+.science-art .dot-n  { fill: #4b718b; }
+.science-art .photon { fill: none; stroke: #d68e64; stroke-width: 1.8; stroke-linecap: round; }
+.science-art .arrow  { fill: #d68e64; }
+.science-art .bond   { stroke: #4b718b; stroke-width: 1.5; }
+.science-art .ribbon { fill: none; stroke: #4d8e88; stroke-width: 7; stroke-linecap: round; }
+.science-art .ribbon-hl { fill: none; stroke: #edf3f4; stroke-width: 1.5; stroke-dasharray: 1 5; stroke-linecap: round; }
+
+.science-art text {
+  fill: #697586;
+  font: 500 8px var(--font-mono);
+  text-anchor: middle;
 }
-
-.art-oxide span {
-  width: 23px;
-  height: 23px;
-  background: #4d8e88;
-  box-shadow: inset -5px -5px 0 rgba(0,0,0,.12), 0 0 0 5px rgba(77,142,136,.13);
-}
-
-.art-oxide span:nth-child(1) { left: 24%; top: 26%; }
-.art-oxide span:nth-child(2) { left: 48%; top: 18%; background: #d68e64; }
-.art-oxide span:nth-child(3) { left: 68%; top: 45%; }
-.art-oxide span:nth-child(4) { left: 38%; top: 63%; background: #d68e64; }
-.art-oxide span:nth-child(5) { left: 17%; top: 68%; }
-
-.art-layer {
-  background: linear-gradient(145deg, #e7eeef, #dce9e7);
-}
-
-.art-layer span {
-  width: 150px;
-  height: 32px;
-  border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-12deg);
-  border: 7px solid #4d8985;
-  background: rgba(117,201,189,.18);
-}
-
-.art-layer span:nth-child(1) { top: 12%; }
-.art-layer span:nth-child(2) { top: 32%; border-color: #d59b70; }
-.art-layer span:nth-child(3) { top: 52%; }
-.art-layer span:nth-child(4) { top: 72%; border-color: #d59b70; }
-
-.art-molecule {
-  background: #edf0f4;
-}
-
-.art-molecule span {
-  width: 24px;
-  height: 24px;
-  background: #4b718b;
-  box-shadow: 0 0 0 5px #d3e0e8;
-}
-
-.art-molecule span:nth-child(1) { left: 18%; top: 42%; }
-.art-molecule span:nth-child(2) { left: 43%; top: 18%; background: #d4936b; }
-.art-molecule span:nth-child(3) { left: 66%; top: 45%; }
-.art-molecule span:nth-child(4) { left: 43%; top: 70%; background: #d4936b; }
-.art-molecule span:nth-child(5) { left: 82%; top: 15%; width: 13px; height: 13px; }
-
-.art-molecule::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(30deg, transparent 39%, #9eb3bf 40%, #9eb3bf 41%, transparent 42%),
-    linear-gradient(150deg, transparent 39%, #9eb3bf 40%, #9eb3bf 41%, transparent 42%);
-  opacity: 0.8;
-}
-
-.art-photo {
-  background: radial-gradient(circle at 70% 25%, #f3d6a8, #eaf0ef 42%, #d8e6e5);
-}
-
-.art-photo span {
-  width: 65px;
-  height: 65px;
-  border: 1px solid rgba(58,122,119,.5);
-  background: rgba(117,201,189,.25);
-}
-
-.art-photo span:nth-child(1) { left: 13%; top: 25%; }
-.art-photo span:nth-child(2) { left: 43%; top: 25%; width: 90px; height: 90px; }
-.art-photo span:nth-child(3) { right: 8%; top: 5%; width: 40px; height: 40px; }
-
 
 /* 9. PROJECTS
    ========================================================= */
